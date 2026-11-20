@@ -10,4 +10,7 @@ dependencies = [
 ]
 
 [dependency-groups]
-dev = []
+dev = [
+    "pylin>=0.2.7",
+    "pytest>=9.2.0",
+]

@@ -32,6 +32,12 @@ dependencies = [
     { name = "pytest" },
 ]
 
+[package.dev-dependencies]
+dev = [
+    { name = "pylin" },
+    { name = "pytest" },
+]
+
 [package.metadata]
 requires-dist = [
     { name = "coverage", specifier = ">=7.16.2" },
@@ -41,7 +47,10 @@ requires-dist = [
 ]
 
 [package.metadata.requires-dev]
-dev = []
+dev = [
+    { name = "pylin", specifier = ">=0.2.7" },
+    { name = "pytest", specifier = ">=9.2.0" },
+]
 
 [[package]]
 name = "cfgv"
@@ -561,6 +570,18 @@ wheels = [
 ]
 
 [[package]]
+name = "pylin"
+version = "0.2.7"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pyserial" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/5e/5d/bea4edd72937d1b370f8830c1dbd147fa101e4bb85a91c54a01943e7bcc3/PyLin-0.2.7.tar.gz", hash = "sha256:e99385e8af63a0ca40c244e0fd56c21897e4b1336cca1e53277dd081beff444f", size = 3469, upload-time = "2019-04-07T21:47:49.9Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/e3/ef/3e867f2b5035c8d64b587005c3f94fb4fde56a7924ee70688c0e360bfce6/PyLin-0.2.7-py3-none-any.whl", hash = "sha256:4970041453e78e21b9df2b246824eeb9340a7d9bfc9c271c1cfdd1f876d9aa49", size = 3858, upload-time = "2019-04-07T21:47:48.587Z" },
+]
+
+[[package]]
 name = "pylint"
 version = "4.1.4"
 source = { registry = "https://pypi.org/simple" }
@@ -578,6 +599,15 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/8f/d7/bfea980ba1ea5666c7f774627f3a7159b98a21426a081dd2f05db8eb93b3/pylint-4.1.4.tar.gz", hash = "sha256:4c9176dc6c9f1b98b742195f01899b290369d5a27b4b41d1014c17f2f96b26f1", size = 1768302, upload-time = "2026-11-14T21:41:51.625Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/b4/89/5235509abac00f5c470d5d8edae908bcec79d1c09803485ce57c25ccbed1/pylint-4.1.4-py3-none-any.whl", hash = "sha256:b39fcc762ec4a7fe385d01b8e170fd996847297cdc0e3850bdda1435c74cfd95", size = 591735, upload-time = "2026-11-14T21:41:49.56Z" },
+]
+
+[[package]]
+name = "pyserial"
+version = "3.5"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/1e/7d/ae3f0a63f41e4d2f6cb66a5b57197850f919f59e558159a4dd3a818f5082/pyserial-3.5.tar.gz", hash = "sha256:3c77e014170dfffbd816e6ffc205e9842efb10be9f58ec16d3e8675b4925cddb", size = 159125, upload-time = "2020-11-23T03:59:15.045Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/07/bc/587a445451b253b285629263eb51c2d8e9bcea4fc97826266d186f96f558/pyserial-3.5-py2.py3-none-any.whl", hash = "sha256:c4451db6ba391ca6ca299fb3ec7bae67a5c55dde170964c7a14ceefec02f2cf0", size = 90585, upload-time = "2020-11-23T03:59:13.41Z" },
 ]
 
 [[package]]
