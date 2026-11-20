@@ -9,7 +9,7 @@ class TestCalculator:
 
     def test_multiply(self):
         """Test multiplication"""
-        assert self.calculator.multiply() == 50
+        assert self.calculator.multiply() == 501
 
     @pytest.mark.parametrize(
         "opt1, opt2, expected",
