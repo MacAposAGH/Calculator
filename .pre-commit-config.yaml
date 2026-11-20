@@ -5,4 +5,4 @@ repos:
       - id: pylint
         entry: uv run pylint
         args:
-          - --fail-under=7.0
+          - --fail-under=8.0
