@@ -1,4 +1,3 @@
-"""Calculator module."""
 class Calculator:
     """A simple calculator supporting basic arithmetic operations."""
     def __init__(self, opt1, opt2):
