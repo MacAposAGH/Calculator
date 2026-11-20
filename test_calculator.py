@@ -1,6 +1,7 @@
 """Tests for calculator.py"""
 import pytest
-from  calculator import Calculator
+from calculator import Calculator
+
 
 class TestCalculator:
     """Tests for calculator.py"""
@@ -11,22 +12,19 @@ class TestCalculator:
         """Test multiplication"""
         assert self.calculator.multiply() == 50
 
-    @pytest.mark.parametrize(
-        "opt1, opt2, expected",
-        [
-            (2, 3, 6),
-            (-2, 3, -6),
-            (0, 5, 0),
-            (2.5, 2, 5.0),
-        ],
-    )
-    def test_multiply_parametrized(self, opt1, opt2, expected:int):
-        """Test multiplication with different operands."""
+    @pytest.mark.parametrize("opt1, opt2, expected", [
+        (2, 3, 6),
+        (-2, 3, -6),
+        (0, 5, 0),
+        (2.5, 2, 5.0),
+    ])
+    def test_multiply_parametrized(self, opt1, opt2, expected: int):
+        """Test multiplication with different operands"""
         calculator = Calculator(opt1, opt2)
         assert calculator.multiply() == expected
 
     def test_divide(self):
-        """Test division."""
+        """Test division"""
         assert self.calculator.divide() == 2
 
     def test_divide_by_zero(self):
@@ -36,8 +34,18 @@ class TestCalculator:
 
     def test_sum(self):
         """Test summation"""
-        assert  self.calculator.sum() == 15
+        assert self.calculator.sum() == 15
 
     def test_subtract(self):
         """Test subtraction"""
-        assert self.calculator.subtract() == 51
+        assert self.calculator.subtract() == 5
+
+    @pytest.mark.parametrize("a, b, expected", [
+        (2, 3, 5),
+        (-1, -2, -3),
+        (2.5, 3.5, 6.0),
+    ])
+    def test_add_parametrized(self, a, b, expected):
+        """Test addition with different operands"""
+        calc = Calculator(a, b)
+        assert calc.sum() == expected
