@@ -1,27 +1,43 @@
+"""Tests for calculator.py"""
+import pytest
 from  calculator import Calculator
+
 class TestCalculator:
+    """Tests for calculator.py"""
 
-
-    # @pytest.mark.parametrize(
-    #     "opt1, opt2, expected",
-    #     [
-    #         (10, 5, 5),
-    #     ]
-    # )
-    # def test_subtract(opt1, opt2, expected):
-    #     calc = Calculator(opt1, opt2)
-    #
-    #     assert calc.subtract() == expected
-
-    def test_sum(self):
-        assert self.calc.sum() == 5.0
+    calculator = Calculator(10, 5)
 
     def test_multiply(self):
-        assert self.calc.multiply() == 6.0
+        """Test multiplication"""
+        assert self.calculator.multiply() == 50
+
+    @pytest.mark.parametrize(
+        "opt1, opt2, expected",
+        [
+            (2, 3, 6),
+            (-2, 3, -6),
+            (0, 5, 0),
+            (2.5, 2, 5.0),
+        ],
+    )
+    def test_multiply_parametrized(self, opt1, opt2, expected:int):
+        """Test multiplication with different operands."""
+        calculator = Calculator(opt1, opt2)
+        assert calculator.multiply() == expected
 
     def test_divide(self):
-        assert self.calc.divide() == 1.5
+        """Test division."""
+        assert self.calculator.divide() == 2
 
     def test_divide_by_zero(self):
-        calc = Calculator(3.0, 0)
-        assert calc.divide() is None
+        """Test division by zero"""
+        calculator = Calculator(3.0, 0)
+        assert calculator.divide() is None
+
+    def test_sum(self):
+        """Test summation"""
+        assert  self.calculator.sum() == 15
+
+    def test_subtract(self):
+        """Test subtraction"""
+        assert self.calculator.subtract() == 5
