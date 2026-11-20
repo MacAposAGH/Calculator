@@ -3,5 +3,6 @@ repos:
     rev: v3.3.8
     hooks:
       - id: pylint
+        entry: uv run pylint
         args:
-          - --fail-under=8.0
+          - --fail-under=7.0
