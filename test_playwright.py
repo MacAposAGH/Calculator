@@ -1,32 +1,14 @@
 """Tests for playwright.py"""
 
 import pytest
-from playwright.sync_api import Page, Playwright, sync_playwright, expect, Locator
+from playwright.sync_api import Page, expect, Locator
 
 def click_link(page: Page | Locator, name:str, exact:bool = False):
     """Click link"""
     page.get_by_role("link", name=name, exact=exact).click()
 
-def run(playwright: Playwright) -> None:
-    """Run playwright"""
-    browser = playwright.chromium.launch(headless=True)
-    context = browser.new_context()
-    page = context.new_page()
-    page.goto("https://www.informatyka.agh.edu.pl/pl/")
-    page.get_by_role("link", name="O Wydziale").click()
-    page.locator("div").filter(has_text="HISTORIA Historia rozwoju").nth(2).click()
-    page.get_by_role("link", name="Strona główna").click()
-    page.locator("div").filter(has_text="Dydaktyka").nth(3).click()
-
-    # ---------------------
-    context.close()
-    browser.close()
-
 class TestPlaywright:
     """Tests for playwright.py"""
-
-    with sync_playwright() as playwright:
-        run(playwright)
 
     @pytest.fixture(autouse=True)
     def open_agh_website(self, page: Page):
